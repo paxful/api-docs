@@ -1,6 +1,10 @@
-# Payment Method requests
+## Payment Method requests
 
-## payment-method/list
+### payment-method/list
+
+Fetch a list of available payment methods
+
+**NB! This endpoint does not require Authentication**
 
 #### Input parameters
 
