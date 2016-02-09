@@ -6,11 +6,11 @@ Fetch a list of available payment methods
 
 **NB! This endpoint does not require Authentication**
 
-#### Input parameters
+##### Input parameters
 
 None
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                                 |
 | ------------- | :------------:| -----------------------------------------------------------:|

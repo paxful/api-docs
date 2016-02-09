@@ -4,7 +4,7 @@
 
 Create an Offer
 
-#### Input parameters
+##### Input parameters
 
 | Field name             | Possible value          | Description       | Required |
 | -------------          | ----------------------- | ----------------- | :------: |
@@ -24,7 +24,7 @@ Create an Offer
 | require_min_past_trades| Boolean                 |                   |          |
 | show_only_trusted_user | Boolean                 |                   |          |
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
@@ -35,7 +35,7 @@ Create an Offer
 
 Updates an offer
 
-#### Input parameters
+##### Input parameters
 
 | Field name             | Possible value          | Description       |
 | ---------------------- | ----------------------- | ----------------- |
@@ -65,13 +65,13 @@ Updates an offer
 
 Delete an offer
 
-#### Input parameters
+##### Input parameters
 
 | Field name    | Type          | Description       |
 | ------------- | ------------- | ----------------- |
 | offer_hash    | String        | Hash of the offer |
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
@@ -81,14 +81,14 @@ Delete an offer
 
 Return all your offers
 
-#### Input parameters
+##### Input parameters
 
 | Field name    | Type          | Description                      |
 | ------------- | ------------- | ------------------------------------- |
 | active        | Boolean       | Whether to only return active offers             |
 | offerType     | String        | Valid types are 'buy' and 'sell' |
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
@@ -99,11 +99,11 @@ Return all your offers
 
 Turn On all your offers
 
-#### Input parameters
+##### Input parameters
 
 None
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
@@ -113,11 +113,11 @@ None
 
 Turn Off all your offers
 
-#### Input parameters
+##### Input parameters
 
 None
 
-#### Response parameters
+##### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
