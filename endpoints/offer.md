@@ -8,27 +8,28 @@ Create an Offer
 
 | Field name             | Possible value          | Description       | Required |
 | -------------          | ----------------------- | ----------------- | :------: |
-| offer_type_field       | String/Integer          | Hash of the offer |   Yes    |
-| currency               | String                  |                   |   Yes    |
-| payment_method         | String                  |                   |   Yes    |
-| margin                 | Integer                 |                   |   Yes    |
-| range_min              | Integer                 | Hash of the offer |   Yes    |
-| range_max              | Integer                 | Hash of the offer |   Yes    |
-| payment_window         | Integer                 | Hash of the offer |   Yes    |
-| payment_method_label   | String                  | Hash of the offer |          |
-| payment_method_group   | String                  | Hash of the offer |          |
-| offer_terms            | String                  | Hash of the offer |          |
-| trade_details          | String                  | Hash of the offer |          |
-| require_verified_email | Boolean                 | Hash of the offer |          |
-| require_verified_phone | Boolean                 | Hash of the offer |          |
-| require_min_past_trades| Boolean                 | Hash of the offer |          |
-| show_only_trusted_user | Boolean                 | Hash of the offer |          |
+| offer_type_field       | String/Integer          | 'buy' or 'sell' string, on backend it's converted to 1 or 2 |   Yes    |
+| currency               | String                  | 3 letter ISO code for currency. 'USD' or any other, case insensitive |   Yes    |
+| payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |   Yes    |
+| margin                 | Integer                 | Number between -99 to 21000 |   Yes    |
+| range_min              | Integer                 | Minimum 1         |   Yes    |
+| range_max              | Integer                 | Minimum 1         |   Yes    |
+| payment_window         | Integer                 | Integer between 30 to 43200 |   Yes    |
+| payment_method_label   | String                  | string of max 25 characters |          |
+| payment_method_group   | String                  | enum of options - 'gift-cards', 'cash-deposits', 'online-transfers', 'debitcredit-cards'. |          |
+| offer_terms            | String                  | string up to 2.5k |          |
+| trade_details          | String                  | string up to 2.5k |          |
+| require_verified_email | Boolean                 |                   |          |
+| require_verified_phone | Boolean                 |                   |          |
+| require_min_past_trades| Boolean                 |                   |          |
+| show_only_trusted_user | Boolean                 |                   |          |
 
 #### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
-| count         | Integer       | Number of toggled Off offers (if any)                  |
+| success       | Boolean       | True or False, whether the offer was created           |
+| offer_hash    | String        | Hash of the newly added offer                          |
 
 ### offer/update
 
@@ -39,26 +40,26 @@ Updates an offer
 | Field name             | Possible value          | Description       |
 | ---------------------- | ----------------------- | ----------------- |
 | offer_hash             | String                  | Hash of the offer |
-| currency               | String                  | Hash of the offer |
-| payment_method         | String                  | Hash of the offer |
-| margin                 | Integer                 | Hash of the offer |
-| range_min              | Integer                 | Hash of the offer |
-| range_max              | Integer                 | Hash of the offer |
-| payment_window         | Integer                 | Hash of the offer |
-| payment_method_label   | String                  | Hash of the offer |
-| payment_method_group   | String                  | Hash of the offer |
-| offer_terms            | String                  | Hash of the offer |
-| trade_details          | String                  | Hash of the offer |
-| require_verified_email | Boolean                 | Hash of the offer |
-| require_verified_phone | Boolean                 | Hash of the offer |
-| require_min_past_trades| Boolean                 | Hash of the offer |
-| show_only_trusted_user | Boolean                 | Hash of the offer |
+| currency               | String                  | 3 letter ISO code for currency. 'USD' or any other, case insensitive |
+| payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |
+| margin                 | Integer                 | Number between -99 to 21000 |
+| range_min              | Integer                 | Minimum 1         |
+| range_max              | Integer                 | Minimum 1         |
+| payment_window         | Integer                 | Integer between 30 to 43200 |
+| payment_method_label   | String                  | string of max 25 characters |
+| payment_method_group   | String                  | enum of options - 'gift-cards', 'cash-deposits', 'online-transfers', 'debitcredit-cards'. |
+| offer_terms            | String                  | string up to 2.5k |
+| trade_details          | String                  | string up to 2.5k |
+| require_verified_email | Boolean                 |                   |
+| require_verified_phone | Boolean                 |                   |
+| require_min_past_trades| Boolean                 |                   |
+| show_only_trusted_user | Boolean                 |                   |
 
 #### Response parameters
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
-| count         | Integer       | Number of toggled Off offers (if any)                  |
+| success       | Boolean       | True or False, whether the offer was updated           |
 
 ### offer/delete
 
