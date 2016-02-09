@@ -29,7 +29,7 @@ $payload = [
     'margin' => 50,
 ];
 
-$apiSeal = hash_hmac('sha256', http_build_query($payload), 'aefij3ldaase_ase23fdAdwjnA2123fFa');
+$apiSeal = hash_hmac('sha256', http_build_query($payload), 'aefij3ldaase_ase23fdAdwjnA2123fFa'); 
 ```
 
 Javascript:
