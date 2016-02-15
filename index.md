@@ -1,19 +1,17 @@
-#Getting started
-
 ##Authentication
 
-For authentication, you need to obtain credentials from the Settings > Developer part in paxful.com
+For authentication, you need to generate your API key under your Paxful account settings in developer tab
 
 Example of request content
 ```
-api_key=dgsdrij234fsdfgkhr&nounce=1455035029943&offer_hash=jewldanf_234f&apiseal=25a62a4c646c5c401ea7c04ebefd6324f15d7ec7b9c6b0710f50117469d2f830
+apikey=c3KJ7M5qw2SKSrw3QnQA8D2DHZCpwTlx&nonce=1455035029943&offer_hash=Agq1Bpw7oX9&apiseal=25a62a4c646c5c401ea7c04ebefd6324f15d7ec7b9c6b0710f50117469d2f830
 ```
 
-In which there are required:
+In which following parameters are required:
 
-   * api_key - key generated from the UI, unique per user
-   * nounce - unix timestamp
-   * apiseal - signature (digest) of the request params passed through a HMAC-SHA1 construct
+   * apikey - Your key generated under your Paxful account settings, unique per user
+   * nonce - current unix timestamp (required to protect against replay attacks)
+   * apiseal - signature (digest) of the request params passed through HMAC-SHA256 construct
    
    
 To generate the apiseal, you need to pass the request payload (i.e. api_key, nounce + request parameters) through hash method using the secret key provided from the UI
@@ -23,9 +21,9 @@ PHP:
 
 ```
 $payload = [
-    'api_key' => 'dgsdrij234fsdfgkhr',
-    'nounce' => time(),
-    'offer_hash' => '12Da_F1ef2D98',
+    'apikey' => 'dgsdrij234fsdfgkhr',
+    'nonce' => time(),
+    'offer_hash' => 'Agq1Bpw7oX9',
     'margin' => 50,
 ];
 
@@ -39,7 +37,7 @@ Javascript:
 <script>
     var xhr = new XMLHttpRequest(),
         secret = 'aefij3ldaase_ase23fdAdwjnA2123fFa',
-        body = 'api_key=' + 'dgsdrij234fsdfgkhr' + '&nounce=' + Date.now() + '&offer_hash=234fds827h&margin=50';
+        body = 'apikey=' + 'dgsdrij234fsdfgkhr' + '&nonce=' + Date.now() + '&offer_hash=Agq1Bpw7oX9&margin=50';
     
     var seal = CryptoJS.HmacSHA256(body, secret);
 
@@ -69,7 +67,7 @@ Example of a successful response
     "timestamp": 1455032576,
     "data": {
         "success": true,
-        "offer_hash": "23hA0_Agf3"
+        "offer_hash": "Agq1Bpw7oX9"
     }
 }
 ```
