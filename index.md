@@ -53,9 +53,11 @@ Javascript:
 Valid Request headers **MUST** contain
 
 ```
-Accept: application/json
+Accept: application/json; version=1
 Content-Type: text/plain
 ```
+
+Currently there's only version=1 supported. When a new version becomes available, if no "version" is set, it will use the latest one. For compatibility you should use the version header appended to the Accept Header
 
 Response formats are always in json containing data *status* *timestamp* and *data* or *error* (in case of errors)
 
@@ -86,3 +88,12 @@ Example of error response
 ```
 
 All Responses are expected to have status code 200
+
+Response also contains two custom header
+
+```
+X-RateLimit-Limit
+X-RateLimit-Remaining
+```
+
+The _X-RateLimit-Limit_ shows your overall limit, while the _X-RateLimit-Remaining_ shows how many requests you're allowed to make until you hit your hour limit.

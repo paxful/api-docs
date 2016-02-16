@@ -8,3 +8,4 @@
 | 1004 | Error while validating input parameters. For example sending offer data to create an offer |
 | 1005 | Unknown payment method group |
 | 1006 | No access. For example deleting offer not belonging to you. |
+| 1007 | Trade action error. There was an error while processing your trade action |
