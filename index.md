@@ -4,7 +4,7 @@ For authentication, you need to generate your API key under your Paxful account 
 
 Example of request content
 ```
-apikey=c3KJ7M5qw2SKSrw3QnQA8D2DHZCpwTlx&nonce=1455035029943&offer_hash=Agq1Bpw7oX9&apiseal=25a62a4c646c5c401ea7c04ebefd6324f15d7ec7b9c6b0710f50117469d2f830
+apikey=c3KJ7M5qw2SKSrw3QnQA8D2DHZCpwTlx&nonce=1455035029943&offer_hash=Agq1Bpw7oX9&apiseal=9b67236984c40a7c66892782cc3b0426833e699a1b44e1a5b44d63d82ba75767
 ```
 
 In which following parameters are required:
@@ -17,7 +17,7 @@ In which following parameters are required:
 To generate the apiseal, you need to pass the request payload (i.e. apikey, nonce + request parameters) through hash method using the secret key provided from the UI
 
 #####Examples
-OpenSSL
+OpenSSL:
 
 ```
 echo -n “apikey=c3KJ7M5qw2SKSrw3QnQA8D2DHZCpwTlx&nonce=1455035029943&offer_hash=Agq1Bpw7oX9” | openssl dgst -sha256 -hmac f8KjbW13VxrY1ziOF5j48Kd9OYxSmleT
