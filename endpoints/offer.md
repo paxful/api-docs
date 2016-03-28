@@ -122,3 +122,37 @@ None
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
 | count         | Integer       | Number of toggled off offers                  |
+
+### offer/price
+
+Return a price for an offer
+
+##### Input parameters
+
+| Field name    | Type          | Description                      |
+| ------------- | ------------- | ------------------------------------- |
+| offer_hash    | String        | Hash of the offer |
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| currency      | String       | Price currency |
+| price         | Float | Price of the offer |
+
+### offer/prices
+
+Return all prices for offers for a given payment method
+
+##### Input parameters
+
+| Field name     | Type          | Description                      |
+| -------------- | ------------- | ------------------------------------- |
+| payment_method | String        | Payment method slug |
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| count         | Integer       | Number of price records               |
+| prices        | Array         | Prices, an array consisting of currency and price      |
