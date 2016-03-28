@@ -16,6 +16,18 @@ Fetch information for an active/completed trade
 | ------------- | ---- | ----------- |
 | trade         | Object | Trade item |
  
+ Possible trade statuses in `trade_status` field are
+ 
+   * Not funded
+   * Active funded
+   * Paid
+   * Cancelled system
+   * Cancelled buyer
+   * Cancelled seller
+   * Released
+   * Dispute open
+   * Dispute wins seller
+   * Dispute wins buyer
 
 ### trade/list
 
