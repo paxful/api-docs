@@ -156,3 +156,26 @@ Return all prices for offers for a given payment method
 | ------------- | :------------:| ------------------------------------------------------:|
 | count         | Integer       | Number of price records               |
 | prices        | Array         | Prices, an array consisting of currency and price      |
+
+### offer/all
+
+Fetch offers from paxful. Replaces deprecated method of /buy-bitcoin?format=json
+Authentication is optional, affects rate limiting
+
+##### Input parameters
+
+| Field name     | Type          | Description                      | Required | 
+| -------------- | ------------- | ------------------------------------- |:----:|
+| offer_type     | String        | Offer type (buy, sell) | * |
+| payment_method | String        | Payment method slug | |
+| currency_code  | String        | Currency code | |
+| fiat_min       | String        | Fiat min | |
+| group          | String        | Payment group slug | |
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| count         | Integer       | Number of returned offers               |
+| totalCount    | Integer         | Total number of existing offers      |
+| offers        | Array         | Offers     |
