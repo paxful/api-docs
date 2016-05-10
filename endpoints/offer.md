@@ -179,3 +179,36 @@ Authentication is optional, affects rate limiting
 | count         | Integer       | Number of returned offers               |
 | totalCount    | Integer         | Total number of existing offers      |
 | offers        | Array         | Offers     |
+
+### offer/activate
+
+Activate an offer
+
+##### Input parameters
+
+| Field name     | Type          | Description                      | Required | 
+| -------------- | ------------- | ------------------------------------- |:----:|
+| offer_hash     | String        | Offer type (buy, sell) | * |
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| success       | Boolean       | True on success, false on error           |
+
+### offer/deactivate
+
+Deactivate an offer
+
+##### Input parameters
+
+| Field name     | Type          | Description                      | Required | 
+| -------------- | ------------- | ------------------------------------- |:----:|
+| offer_hash     | String        | Offer type (buy, sell) | * |
+
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| success       | Boolean       | True on success, false on error                  |
