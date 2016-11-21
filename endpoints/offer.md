@@ -11,13 +11,13 @@ Create an Offer
 | offer_type_field       | String                  | 'buy' or 'sell' string |   Yes    |
 | currency               | String                  | 3 letter ISO code for fiat currency. 'USD' or any other. Case insensitive |   Yes    |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |   Yes    |
-| margin                 | Integer                 | Number between -99 to 21000 |   Yes    |
+| margin                 | Float                   | Number between -99.99 to 21000.00 |   Yes    |
 | range_min              | Integer                 | Minimum 1         |   Yes    |
 | range_max              | Integer                 | Minimum 1         |   Yes    |
 | payment_window         | Integer                 | Integer between 30 to 43200 |   Yes    |
 | payment_method_label   | String                  | String of max 25 characters. Only ASCII characters |          |
 | payment_method_group   | String                  | Enum of options: 'gift-cards', 'cash-deposits', 'online-transfers', 'debitcredit-cards'. |          |
-| offer_terms            | String                  | String up to 2500 characters |          |
+| offer_terms            | String                  | String up to 2500 characters |     Yes     |
 | trade_details          | String                  | String up to 2500 characters |          |
 | require_verified_email | Boolean                 |                   |          |
 | require_verified_phone | Boolean                 |                   |          |
@@ -42,7 +42,7 @@ Updates an offer
 | offer_hash             | String                  | Hash of the offer |
 | currency               | String                  | 3 letter ISO code for currency. 'USD' or any other. Case insensitive |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |
-| margin                 | Integer                 | Number between -99 to 21000 |
+| margin                 | Float                   | Number between -99.99 to 21000.00 |
 | range_min              | Integer                 | Minimum 1         |
 | range_max              | Integer                 | Minimum 1         |
 | payment_window         | Integer                 | Integer between 30 to 43200 |
