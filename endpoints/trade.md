@@ -138,6 +138,7 @@ Open a dispute
 | Field name    |   Possible value  | Description   | Required |
 | ------------- | ----------------- | ------------- | :------: |
 | trade_hash    | String            | Hash ID of a trade | Yes |
+| reason        | String            | Description of the dispute reason, max length 250 characters|Yes|
 
 ##### Response parameters
 
