@@ -31,7 +31,7 @@ Fetch information for an active/completed trade
 
 ### trade/start
 
-Fetch information for an active/completed trade
+Start a trade
 
 ##### Input parameters
 
