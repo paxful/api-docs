@@ -29,6 +29,27 @@ Fetch information for an active/completed trade
    * Dispute wins seller
    * Dispute wins buyer
 
+### trade/start
+
+Fetch information for an active/completed trade
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| offer_hash    | String            | Hash ID of an offer | Yes |
+| satoshi    | Integer            | Trade amount in satoshis | read below |
+| fiat    | Float            | Trade amount in fiat currency | read below |
+
+**Either 'satoshi' or 'fiat' must be provided**
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| success       | Boolean | True or false, whether the trade was started |
+| trade_hash    | String | Hash Id of the trade |
+
 ### trade/list
 
 List all your active trades 
