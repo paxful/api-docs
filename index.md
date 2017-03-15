@@ -58,6 +58,24 @@ Javascript:
 </script>
 ```
 
+Python:
+```python
+
+import time
+import hmac
+import requests
+from hashlib import sha256
+nonce = int(time.time())
+url = 'https://www.paxful.com/api/offer/list'
+payload = {'apikey':pax_key, 'nonce':nonce}
+payload = urllib.urlencode(sorted(payload.items()))
+apiseal = hmac.new(pax_secret,ffs,sha256).hexdigest()
+data_with_apiseal = payload + '&apiseal=' + apiseal
+headers = {'Accept': 'application/json', 'Content-Type': 'text/plain'}
+resp = requests.post(url, data = data_with_apiseal, headers=headers)
+
+```
+
 ##Request and response formats
 
 Valid Request headers **MUST** contain
