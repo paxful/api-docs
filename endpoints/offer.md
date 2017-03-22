@@ -23,6 +23,7 @@ Create an Offer
 | require_verified_phone | Boolean                 |                   |          |
 | require_min_past_trades| Boolean                 |                   |          |
 | show_only_trusted_user | Boolean                 |                   |          |
+| predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
 
 ##### Response parameters
 
@@ -54,6 +55,7 @@ Updates an offer
 | require_verified_phone | Boolean                 |                   |
 | require_min_past_trades| Boolean                 |                   |
 | show_only_trusted_user | Boolean                 |                   |
+| predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
 
 #### Response parameters
 
