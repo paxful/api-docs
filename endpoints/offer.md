@@ -164,6 +164,8 @@ Return all prices for offers for a given payment method
 Fetch offers from paxful. Replaces deprecated method of /buy-bitcoin?format=json
 Authentication is optional, affects rate limiting
 
+Results are cached for 1 minute.
+
 ##### Input parameters
 
 | Field name     | Type          | Description                      | Required | 
