@@ -4,7 +4,7 @@
 
 Fetch a list of available payment methods
 
-**NB! This endpoint does not require Authentication**
+**NB! This endpoint does not require Authentication1**
 
 ##### Input parameters
 
