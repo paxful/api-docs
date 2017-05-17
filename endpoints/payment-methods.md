@@ -4,7 +4,7 @@
 
 Fetch a list of available payment methods
 
-**NB! This endpoint does not require Authentication1**
+**NB! This endpoint does not require Authentication**
 
 ##### Input parameters
 
@@ -39,3 +39,35 @@ Fetch fees for payment methods
 | btc_rate        | Float         | Bitcoin fiat currency price    |
 | fiat_currency   | String        | Currency code       |
 | payment_methods | Array         | Payment methods and their fees       |
+
+##### Response example
+
+```json,ignore
+{
+  "status": "success",
+  "timestamp": 1495018511,
+  "data": {
+    "count": 4,
+    "btc_rate": "1034.60",
+    "fiat_currency": "USD",
+    "payment_methods": {
+      "western-union": {
+        "avg_from": "5.00",
+        "avg_to": "7.00"
+      },
+      "paypal-my-cash": {
+        "avg_from": "107.00",
+        "avg_to": "110.00"
+      },
+      "amazon-gift-card": {
+        "avg_from": "16.00",
+        "avg_to": "18.00"
+      },
+      "credit-card": {
+        "avg_from": "33.00",
+        "avg_to": "45.00"
+      }
+    }
+  }
+}
+```
