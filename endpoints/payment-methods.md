@@ -42,7 +42,7 @@ Fetch fees for payment methods
 
 ##### Response example
 
-```json,ignore
+```
 {
   "status": "success",
   "timestamp": 1495018511,
