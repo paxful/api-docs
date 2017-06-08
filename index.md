@@ -27,17 +27,41 @@ echo -n “apikey=c3KJ7M5qw2SKSrw3QnQA8D2DHZCpwTlx&nonce=1455035029943&offer_has
 (stdin)= 9b67236984c40a7c66892782cc3b0426833e699a1b44e1a5b44d63d82ba75767
 ```
 
-PHP:
+PHP: minimal working example
 
 ```
+// Payload which is sent to server
 $payload = [
-    'apikey' => 'dgsdrij234fsdfgkhr',
+    'apikey' => 'YOURAPIKEY',
     'nonce' => time(),
-    'offer_hash' => 'Agq1Bpw7oX9',
-    'margin' => 50,
 ];
 
-$apiSeal = hash_hmac('sha256', http_build_query($payload), 'aefij3ldaase_ase23fdAdwjnA2123fFa'); 
+// Generation of apiseal
+$apiseal = hash_hmac('sha256', http_build_query($payload), 'YOURSECRET');
+
+// Append the generated apiseal to payload
+$payload['apiseal'] = $apiseal;
+
+// Set request URL (in this case we check your balance)
+$ch = curl_init('https://paxful.com/api/wallet/balance');
+
+// NOTICE that we send the payload as a string instead of POST parameters
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Accept: application/json; version=1',
+    'Content-Type: text/plain',
+]);
+
+// fetch response
+$response = curl_exec($ch);
+
+// convert json response into array
+$data = json_decode($response);
+
+var_dump($data);
+
+curl_close($ch);
 ```
 
 Javascript:
