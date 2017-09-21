@@ -145,3 +145,22 @@ Open a dispute
 | Field name    | Type | Description |
 | ------------- | ---- | ----------- |
 | success       | Boolean | Success/Error |
+
+### trade/completed
+
+Fetch a list of your completed trades, optionally limited by partner username
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| page          | Integer           | Page number, default 1 | No |
+| partner       | String            | Limit by user | No |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| count         | Integer | Number of returned trades |
+| page          | Integer | Page requested |
+| trades        | Array | Array of trades |

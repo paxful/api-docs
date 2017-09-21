@@ -30,3 +30,58 @@ Fetch information for a user
 | is_verified       | Boolean | Is verified |
 | last_seen         | String | User last seen |
  
+### user/trust
+
+Add username to a trusted user list
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| username      | String            | Username of the user | Yes |
+
+##### Response parameters
+
+Empty
+
+### user/untrust
+
+Remove username from trusted list
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| username      | String            | Username of the user | Yes |
+
+##### Response parameters
+
+Empty
+
+### user/block
+
+Add username to blocked list
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| username      | String            | Username of the user | Yes |
+
+##### Response parameters
+
+Empty
+
+### user/unblock
+
+Remove user from blocked list
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| username      | String            | Username of the user | Yes |
+
+##### Response parameters
+
+Empty
