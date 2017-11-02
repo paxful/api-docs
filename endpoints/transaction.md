@@ -1,6 +1,6 @@
 ## Transaction requests
 
-### transaction/all
+### transactions/all
 
 Fetch a list of your transactions, optionally filtered by type
 
