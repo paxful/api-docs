@@ -88,6 +88,7 @@ Python:
 import time
 import hmac
 import requests
+import urllib
 from hashlib import sha256
 nonce = int(time.time())
 url = 'https://www.paxful.com/api/offer/list'
