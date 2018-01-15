@@ -29,3 +29,17 @@ None
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
 | address       | String       | New bitcoin address       |
+
+### wallet/list-addresses
+
+Fetch list of your addresses
+
+##### Input parameters
+
+None
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| addresses     | Array         | List of your bitcoin addresses, 50 limit       |
