@@ -67,7 +67,7 @@ curl_close($ch);
 Javascript:
 
 ``` html
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 <script>
     var xhr = new XMLHttpRequest(),
         secret = 'aefij3ldaase_ase23fdAdwjnA2123fFa',
