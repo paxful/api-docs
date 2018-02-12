@@ -26,6 +26,7 @@ Create an Offer
 | predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
 | country_limitation_type | String                 | Type of limitation. Valid values are 'allowed' or 'disallowed' |  |
 | country_limitation_list | String                 | Comma separated list of country codes |  |
+| tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored |  |
 
 ##### Response parameters
 
@@ -58,6 +59,7 @@ Updates an offer
 | require_min_past_trades| Boolean                 |                   |
 | show_only_trusted_user | Boolean                 |                   |
 | predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
+| tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored. If this parameter is missing, tags are not updated. If it's empty, any existing tags are removed |  |
 
 #### Response parameters
 
