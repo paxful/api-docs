@@ -37,7 +37,8 @@ $payload = [
 ];
 
 // Generation of apiseal
-$apiseal = hash_hmac('sha256', http_build_query($payload), 'YOURSECRET');
+// Please note the PHP_QUERY_RFC3986 enc_type
+$apiseal = hash_hmac('sha256', http_build_query($payload, null, '&', PHP_QUERY_RFC3986), 'YOURSECRET');
 
 // Append the generated apiseal to payload
 $payload['apiseal'] = $apiseal;
@@ -46,7 +47,7 @@ $payload['apiseal'] = $apiseal;
 $ch = curl_init('https://paxful.com/api/wallet/balance');
 
 // NOTICE that we send the payload as a string instead of POST parameters
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload, null, '&', PHP_QUERY_RFC3986));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Accept: application/json; version=1',
