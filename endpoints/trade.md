@@ -139,6 +139,15 @@ Open a dispute
 | ------------- | ----------------- | ------------- | :------: |
 | trade_hash    | String            | Hash ID of a trade | Yes |
 | reason        | String            | Description of the dispute reason, max length 250 characters|Yes|
+| reason_type   | String            | Type of reason, see below for valid values | No |
+
+Reason Types:
+* buyer_unresponsive_vendor
+* buyer_payment_issue
+* buyer_other
+* vendor_coinlocker 
+* vendor_payment_issue
+* vendor_other
 
 ##### Response parameters
 
