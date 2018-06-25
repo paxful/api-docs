@@ -102,6 +102,84 @@ resp = requests.post(url, data = data_with_apiseal, headers=headers)
 
 ```
 
+C#
+```csharp
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Security.Cryptography;
+
+
+// Here is the method that generates hmac
+class HmacGenerate
+{
+   public string GenerateHMAC(string secret, string payload)
+   {
+       var keyBytes = Encoding.UTF8.GetBytes(secret);
+       var hmac = new HMACSHA256 { Key = keyBytes };
+       var rawSig = hmac.ComputeHash(Encoding.UTF8.GetBytes(payload));
+       return BitConverter.ToString(rawSig).Replace("-", string.Empty).ToLower();
+   }
+}
+
+//Here we make the request
+public class WebRequestPost
+{
+   public static void Main()
+   {
+       HmacGenerate hmac = new HmacGenerate();
+       //Generate today's date in the format of dd.MM.yyyy
+       DateTime dateAndTime = DateTime.Now;
+       var date = dateAndTime.ToString("dd.MM.yyyy");
+       //Variables apiKey, secret are used for hmac generation, you need to use your secret and api key from user settings
+       var apiKey = "yourApiKey";
+       var secret = "yourApiSecret";
+       //Variables offerHash, margin are used for this example request, those variables should contain your information
+       var offerHash = "2zEeNVVADeb";
+       var margin = 50;
+       //Variables body and theKey is used for request body, theKey holds generate hmac
+       var body = "apikey=" + apiKey + "&nonce=" + date + "&offer_hash=" + offerHash +"&margin=" + margin;
+       var theKey = "&apiseal="+hmac.GenerateHMAC(secret,body);
+       
+       // Create a request using a URL that can receive a post.
+       WebRequest request = WebRequest.Create("https://paxful.com/api/offer/list");
+       // Set the Method property of the request to POST.
+       request.Method = "POST";
+       // Create POST data and convert it to a byte array.
+       string postData = body + theKey;
+       byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+       // Set the ContentType property of the WebRequest.
+       request.ContentType = "application/text";
+
+       // Set the ContentLength property of the WebRequest.
+       request.ContentLength = byteArray.Length;
+       // Get the request stream.
+       Stream dataStream = request.GetRequestStream();
+       // Write the data to the request stream.
+       dataStream.Write(byteArray, 0, byteArray.Length);
+       // Close the Stream object.
+       dataStream.Close();
+       // Get the response.
+       WebResponse response = request.GetResponse();
+       // Display the status.
+       Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+       // Get the stream containing content returned by the server.
+       dataStream = response.GetResponseStream();
+       // Open the stream using a StreamReader for easy access.
+       StreamReader reader = new StreamReader(dataStream);
+       // Read the content.
+       string responseFromServer = reader.ReadToEnd();
+       // Display the content.
+       Console.WriteLine(responseFromServer);
+       // Clean up the streams.
+       reader.Close();
+       dataStream.Close();
+       response.Close();
+   }
+}
+```
+
 ##Request and response formats
 
 Valid Request headers **MUST** contain
