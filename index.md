@@ -92,7 +92,7 @@ import requests
 import urllib
 from hashlib import sha256
 nonce = int(time.time())
-url = 'https://www.paxful.com/api/offer/list'
+url = 'https://paxful.com/api/offer/list'
 payload = {'apikey':pax_key, 'nonce':nonce}
 payload = urllib.urlencode(sorted(payload.items()))
 apiseal = hmac.new(pax_secret, payload, sha256).hexdigest()
