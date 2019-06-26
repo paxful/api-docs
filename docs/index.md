@@ -83,7 +83,32 @@ Javascript:
 </script>
 ```
 
-Python:
+Python 3:
+```python
+
+import hmac
+import time
+from hashlib import sha256
+from urllib.parse import urlencode
+
+import requests  # pip install requests
+
+API_URL = "https://paxful.com/api/offer/list"
+API_KEY = "<your api key>"
+API_SECRET = "<your api secret>"
+nonce = int(time.time())
+
+payload = {"apikey": API_KEY, "nonce": nonce}
+payload = urlencode(sorted(payload.items()))
+apiseal = hmac.new(API_SECRET.encode(), payload.encode(), sha256).hexdigest()
+data_with_apiseal = payload + "&apiseal=" + apiseal
+headers = {"Accept": "application/json", "Content-Type": "text/plain"}
+resp = requests.post(API_URL, data=data_with_apiseal, headers=headers)
+
+
+```
+
+Python 2.7:
 ```python
 
 import time
