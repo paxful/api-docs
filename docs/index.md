@@ -205,6 +205,68 @@ public class WebRequestPost
 }
 ```
 
+Golang
+```Go
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"fmt"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
+	"github.com/antonholmquist/jason"
+)
+
+func Paxful() {
+	paxfulAPIKey := "<your api key>"
+	paxfulSecretAPIKey := "<your secret api key>"
+	nonce := fmt.Sprintf("%d", time.Now().Unix())
+
+	values := url.Values{}
+	values.Add("apikey", paxfulAPIKey)
+	values.Add("nonce", nonce)
+
+	payload := values.Encode()
+
+	mac := hmac.New(sha256.New, []byte(paxfulSecretAPIKey))
+	mac.Write([]byte(payload))
+	apiseal := hex.EncodeToString(mac.Sum(nil))
+
+	values.Add("apiseal", apiseal)
+
+	endpoint := "wallet/balance"
+	url := "https://paxful.com/api/" + endpoint
+
+	req, err := http.NewRequest(
+		http.MethodPost, url,
+		strings.NewReader(values.Encode()),
+	)
+	if err != nil {
+		panic(err)
+	}
+
+	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Content-Type", "text/plain")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	v, err := jason.NewObjectFromReader(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(v.String())
+
+}
+```
+
 ##Request and response formats
 
 Valid Request headers **MUST** contain
