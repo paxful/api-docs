@@ -179,6 +179,7 @@ Results are cached for 1 minute.
 | currency_code  | String        | Currency code | |
 | fiat_min       | String        | Fiat min | |
 | group          | String        | Payment group slug | |
+| location_id    | Int           | Location id is needed to search for offers from Cash in Person payment method. If payment method is another - parameter will be ignored.<br>You can find location ids here: https://www.geonames.org/.<br>For better experience use locations ids of countries and cities. | |
 
 ##### Response parameters
 
