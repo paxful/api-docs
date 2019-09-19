@@ -66,3 +66,20 @@ Fetch an image attachment from trade
 ##### Response parameters
 
 Response is the image
+
+### image/add
+
+Attach image to trade chat.
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| trade_hash    | String            | Hash ID of a trade | Yes |
+| file    | String               | Link to a file in the Internet. It should be reachable from an external service. Supported formats are `jpeg`, `png`, `jpg`. | Yes |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| success         | Boolean | Whether image was posted in trade chat |
