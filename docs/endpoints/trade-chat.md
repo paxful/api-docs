@@ -67,7 +67,7 @@ Fetch an image attachment from trade
 
 Response is the image
 
-### image/add
+### trade-chat/image/add
 
 Attach image to trade chat.
 
