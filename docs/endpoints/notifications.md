@@ -2,7 +2,7 @@
 
 ### notifications/last
 
-Return top 5 last notifications
+Return top 50 last notifications
 
 ##### Input parameters
 
