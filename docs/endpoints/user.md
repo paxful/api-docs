@@ -85,3 +85,17 @@ Remove user from blocked list
 ##### Response parameters
 
 Empty
+
+### user/touch
+
+Refresh your last seen timestamp
+
+**This endpoint has its own rate limit and is limited to 360 requests per hour (every 10 second max)**
+
+##### Input parameters
+
+None
+
+##### Response parameters
+
+Empty
