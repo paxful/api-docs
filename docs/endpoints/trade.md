@@ -19,6 +19,8 @@ Fetch information for an active/completed trade
  Possible trade statuses in `trade_status` field are
  
    * Not funded
+   * Funds processing
+   * Funds processed
    * Active funded
    * Paid
    * Cancelled system
