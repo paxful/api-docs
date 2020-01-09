@@ -110,7 +110,7 @@ Return all your offers
 
 | Field name    | Type          | Description                      |
 | ------------- | ------------- | ------------------------------------- |
-| active        | Boolean       | Whether to only return active offers             |
+| active        | Boolean       | Whether to return only active or only inactive offers |
 | offer_type     | String        | Valid types are 'buy' and 'sell' |
 
 ##### Response parameters
