@@ -240,3 +240,19 @@ Deactivate an offer
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
 | success       | Boolean       | True on success, false on error                  |
+
+### offer/get
+
+Fetch information for an offer
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| offer_hash    | String            | Hash ID of a offer | Yes |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| data          | Object | Offer item |
