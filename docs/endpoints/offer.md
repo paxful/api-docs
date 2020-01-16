@@ -249,7 +249,7 @@ Fetch information for an offer
 
 | Field name    |   Possible value  | Description   | Required |
 | ------------- | ----------------- | ------------- | :------: |
-| offer_hash    | String            | Hash ID of a offer | Yes |
+| offer_hash    | String            | Hash ID of an offer | Yes |
 
 ##### Response parameters
 
