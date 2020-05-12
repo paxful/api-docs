@@ -16,6 +16,8 @@ In which following parameters are required:
    
 To generate the apiseal, you need to pass the request payload (i.e. apikey, nonce + request parameters) through hash method using the secret key provided from the UI
 
+Payload should be encoded correctly using RFC3986. For php use http_build_query() an for for Python use urlencode().
+
 #####Examples
 OpenSSL:
 
