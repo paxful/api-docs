@@ -19,6 +19,7 @@ Create an Offer
 | payment_method_group   | String                  | Enum of options: 'gift-cards', 'cash-deposits', 'online-transfers', 'debitcredit-cards'. |          |
 | offer_terms            | String                  | String up to 2500 characters |     Yes     |
 | trade_details          | String                  | String up to 2500 characters |     Yes     |
+| fixed_price            | Decimal                 | Fixed price in currency |          |
 | require_min_past_trades| Boolean                 |                   |          |
 | show_only_trusted_user | Boolean                 |                   |          |
 | predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
@@ -52,6 +53,7 @@ Updates an offer
 | payment_method_group   | String                  | Enum of options: 'gift-cards', 'cash-deposits', 'online-transfers', 'debitcredit-cards'. |
 | offer_terms            | String                  | String up to 2500 characters |
 | trade_details          | String                  | String up to 2500 characters |
+| fixed_price            | Decimal                 | Fixed price in currency |          |
 | require_min_past_trades| Boolean                 |                   |
 | show_only_trusted_user | Boolean                 |                   |
 | predefined_amount      | String                  | Comma separated predefined amounts, i.e. 20,30,50 |   |
