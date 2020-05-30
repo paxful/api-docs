@@ -12,7 +12,7 @@ Give a feedback for a trade
 | ---------------- | ----------------------- | ----------------- | :------: |
 | trade_hash       | String                  | Trade hash of the trade |   Yes    |
 | message       | String                     | Feedback message |   No    |
-| rating       | Integer (-1,0,1)            | Rating |   Yes    |
+| rating       | Integer (-1,1)            | Rating |   Yes    |
 
 ##### Response parameters
 
