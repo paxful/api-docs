@@ -1,3 +1,7 @@
+version: 2
 formats: []
 build:
-  image: 2.0
+  image: latest
+mkdocs:
+  configuration: mkdocs.yml
+  fail_on_warning: false
