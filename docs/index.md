@@ -16,8 +16,6 @@ In which following parameters are required:
    
 To generate the apiseal, you need to pass the request payload (i.e. apikey, nonce + request parameters) through hash method using the secret key provided from the UI
 
-Payload should be encoded correctly using RFC3986. For php use http_build_query() an for for Python use urlencode().
-
 #####Examples
 OpenSSL:
 
@@ -279,6 +277,8 @@ Content-Type: text/plain
 ```
 
 Currently there's only version=1 supported. When a new version becomes available, if no "version" is set, it will use the latest one. For compatibility you should use the version header appended to the Accept Header
+
+Payload should be encoded correctly using RFC3986. For php use http_build_query() an for for Python use urlencode().
 
 Response formats are always in json containing data *status* *timestamp* and *data* or *error* (in case of errors)
 
