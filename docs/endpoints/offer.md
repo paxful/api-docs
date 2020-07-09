@@ -11,7 +11,7 @@ Create an Offer
 | offer_type_field       | String                  | 'buy' or 'sell' string |   Yes    |
 | currency               | String                  | 3 letter ISO code for fiat currency. 'USD' or any other. Case insensitive |   Yes    |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |   Yes    |
-| margin                 | Float                   | Number between -99.99 to 21000.00 |   Yes    |
+| margin                 | Float                   | Number depends on user tier |   Yes    |
 | range_min              | Integer                 | Minimum 1         |   Yes    |
 | range_max              | Integer                 | Minimum 1         |   Yes    |
 | payment_window         | Integer                 | Integer between 30 to 43200 |   Yes    |
@@ -45,7 +45,7 @@ Updates an offer
 | offer_hash             | String                  | Hash of the offer |
 | currency               | String                  | 3 letter ISO code for currency. 'USD' or any other. Case insensitive |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |
-| margin                 | Float                   | Number between -99.99 to 21000.00 |
+| margin                 | Float                   | Number depends on user tier |
 | range_min              | Integer                 | Minimum 1         |
 | range_max              | Integer                 | Minimum 1         |
 | payment_window         | Integer                 | Integer between 30 to 43200 |
@@ -73,11 +73,11 @@ Updates an offer margin or fixed price value. Must be used based on created offe
 
 ##### Input parameters
 
-| Field name             | Possible value          | Description       |
-| ---------------------- | ----------------------- | ----------------- |
-| offer_hash             | String                  | Hash of the offer |
-| margin                 | Float                   | Number between -99.99 to 21000.00 |
-| fixed_price            | Float                   |  |
+| Field name             | Possible value          | Description       | Required |
+| ---------------------- | ----------------------- | ----------------- | -------- |
+| offer_hash             | String                  | Hash of the offer | Yes      |
+| margin                 | Float                   | Number depends on user tier | One of margin or fixed_price |  
+| fixed_price            | Float                   | Fixed price in currency | One of margin or fixed_price |
 
 #### Response parameters
 
