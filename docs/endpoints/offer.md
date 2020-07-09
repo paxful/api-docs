@@ -84,6 +84,24 @@ Updates an offer margin
 | ------------- | :------------:| ------------------------------------------------------:|
 | success       | Boolean       | True or false, whether the offer margin was updated    |
 
+### offer/update-price
+
+Updates an offer margin or fixed price
+
+##### Input parameters
+
+| Field name             | Possible value          | Description       |
+| ---------------------- | ----------------------- | ----------------- |
+| offer_hash             | String                  | Hash of the offer |
+| margin                 | Float                   | Number between -99.99 to 21000.00 |
+| fixed_price            | Float                   |  |
+
+#### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| success       | Boolean       | True or false, whether the offer margin was updated    |
+
 ### offer/delete
 
 Delete an offer
