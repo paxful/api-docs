@@ -16,7 +16,6 @@ Fetch information for a user
 | ----------------- | -------| ----------- |
 | username          | String | Username |
 | feedback_positive | Int    | Positive feedback |
-| feedback_neutral  | Int | Neutral feedback |
 | feedback_negative | Int | Positive feedback |
 | total_partners    | Int | Total number of trade partners |
 | total_trades      | Int | Total number of trades |
@@ -28,6 +27,7 @@ Fetch information for a user
 | phone_verified    | Boolean | Is Phone verified |
 | is_vendor         | Boolean | Confirmed vendor |
 | is_verified       | Boolean | Is verified |
+| is_trusted       | Boolean | Is trusted |
 | last_seen         | String | User last seen |
  
 ### user/trust
@@ -114,7 +114,6 @@ None
 | ----------------- | -------| ----------- |
 | username          | String | Username |
 | feedback_positive | Int    | Positive feedback |
-| feedback_neutral  | Int | Neutral feedback |
 | feedback_negative | Int | Positive feedback |
 | total_partners    | Int | Total number of trade partners |
 | total_trades      | Int | Total number of trades |
@@ -126,5 +125,6 @@ None
 | phone_verified    | Boolean | Is Phone verified |
 | is_vendor         | Boolean | Confirmed vendor |
 | is_verified       | Boolean | Is verified |
+| is_trusted       | Boolean | Is trusted |
 | last_seen         | String | User last seen |
  
