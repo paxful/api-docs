@@ -67,6 +67,25 @@ None
 | count         | Integer       | Number of trades  |
 | trades        | Array         | Trades            |
 
+### trade/locations
+
+Fetch information for seller and buyer locations in a trade.
+
+Restricted: User requesting the information must be a trade partner.
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| trade_hash    | String            | Hash ID of a trade | Yes |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| seller       | Object | Seller location |
+| buyer       | Object | Buyer location |
+
 ### trade/paid
 
 Mark trade as PAID
