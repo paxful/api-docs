@@ -16,7 +16,7 @@ Fetch information for a user
 | ----------------- | -------| ----------- |
 | username          | String | Username |
 | feedback_positive | Int    | Positive feedback |
-| feedback_negative | Int | Positive feedback |
+| feedback_negative | Int | Negative feedback |
 | total_partners    | Int | Total number of trade partners |
 | total_trades      | Int | Total number of trades |
 | trusted_by        | Int | Trusted by user count |
@@ -114,7 +114,7 @@ None
 | ----------------- | -------| ----------- |
 | username          | String | Username |
 | feedback_positive | Int    | Positive feedback |
-| feedback_negative | Int | Positive feedback |
+| feedback_negative | Int | Negative feedback |
 | total_partners    | Int | Total number of trade partners |
 | total_trades      | Int | Total number of trades |
 | trusted_by        | Int | Trusted by user count |

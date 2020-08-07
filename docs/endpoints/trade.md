@@ -67,6 +67,60 @@ None
 | count         | Integer       | Number of trades  |
 | trades        | Array         | Trades            |
 
+### trade/locations
+
+Fetch information for seller and buyer locations in a trade.
+
+Restricted: User requesting the information must be a trade partner.
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| trade_hash    | String            | Hash ID of a trade | Yes |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| seller       | Object | Seller location |
+| buyer       | Object | Buyer location |
+
+Example
+
+```json
+{
+    "status": "success",
+    "timestamp": 1596706249,
+    "data": {
+        "seller": {
+            "detected_location": {
+                "iso": "USA",
+                "name": "USA",
+                "localized_name": "USA"
+            },
+            "ip_location": {
+                "iso": "USA",
+                "name": "USA",
+                "localized_name": "USA"
+            }
+        },
+        "buyer": {
+            "detected_location": {
+                "iso": "DE",
+                "name": "Germany",
+                "localized_name": "Germany"
+            },
+            "ip_location": {
+                "iso": "DE",
+                "name": "Germany",
+                "localized_name": "Germany"
+            }
+        }
+    }
+}
+```
+
 ### trade/paid
 
 Mark trade as PAID
