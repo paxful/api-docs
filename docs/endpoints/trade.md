@@ -229,3 +229,19 @@ Fetch a list of your completed trades, optionally limited by partner username
 | count         | Integer | Number of returned trades |
 | page          | Integer | Page requested |
 | trades        | Array | Array of trades |
+
+### trade/fund
+
+Fund a deferred escrow trade
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| trade_hash    | String            | Hash ID of a trade | Yes |
+
+##### Response parameters
+
+| Field name    | Type | Description |
+| ------------- | ---- | ----------- |
+| success       | Boolean | Success/Error |
