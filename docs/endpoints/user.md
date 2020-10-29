@@ -27,8 +27,9 @@ Fetch information for a user
 | phone_verified    | Boolean | Is Phone verified |
 | is_vendor         | Boolean | Confirmed vendor |
 | is_verified       | Boolean | Is verified |
-| is_trusted       | Boolean | Is trusted |
+| is_trusted        | Boolean | Is trusted |
 | last_seen         | String | User last seen |
+| avatar_url        | String | Avatar url | 
  
 ### user/trust
 
@@ -125,6 +126,6 @@ None
 | phone_verified    | Boolean | Is Phone verified |
 | is_vendor         | Boolean | Confirmed vendor |
 | is_verified       | Boolean | Is verified |
-| is_trusted       | Boolean | Is trusted |
+| is_trusted        | Boolean | Is trusted |
 | last_seen         | String | User last seen |
- 
+| avatar_url        | String | Avatar url |
