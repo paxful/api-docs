@@ -26,6 +26,7 @@ Create an Offer
 | country_limitation_type | String                 | Type of limitation. Valid values are 'allowed' or 'disallowed' |  |
 | country_limitation_list | String                 | Comma separated list of country codes |  |
 | tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored |  |
+| is_fixed_price         | Boolean                 | Needed to update the offer with fixed price |  |
 
 ##### Response parameters
 
@@ -60,6 +61,7 @@ Updates an offer
 | tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored. If this parameter is missing, tags are not updated. If it's empty, any existing tags are removed |  |
 | country_limitation_type | String                 | Type of limitation. Valid values are 'allowed' or 'disallowed' |
 | country_limitation_list | String                 | Comma separated list of country codes |
+| is_fixed_price         | Boolean                 | Needed to update the offer with fixed price |  |
 
 #### Response parameters
 
