@@ -30,6 +30,7 @@ Fetch information for a user
 | is_trusted        | Boolean | Is trusted |
 | last_seen         | String | User last seen |
 | avatar_url        | String | Avatar url | 
+| status            | String | User status | 
  
 ### user/trust
 
@@ -129,3 +130,4 @@ None
 | is_trusted        | Boolean | Is trusted |
 | last_seen         | String | User last seen |
 | avatar_url        | String | Avatar url |
+| status            | String | User status | 
