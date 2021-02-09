@@ -27,6 +27,7 @@ Create an Offer
 | country_limitation_list | String                 | Comma separated list of country codes |  |
 | tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored |  |
 | is_fixed_price         | Boolean                 | Needed to update the offer with fixed price |  |
+| payment_country        | Boolean                 | 3 letter ISO country code (e.g. USA, EST, fra etc.). Required for country specific payment methods. |  |
 
 ##### Response parameters
 
@@ -62,6 +63,7 @@ Updates an offer
 | country_limitation_type | String                 | Type of limitation. Valid values are 'allowed' or 'disallowed' |
 | country_limitation_list | String                 | Comma separated list of country codes |
 | is_fixed_price         | Boolean                 | Needed to update the offer with fixed price |  |
+| payment_country        | Boolean                 | 3 letter ISO country code (e.g. USA, EST, fra etc.). Required for country specific payment methods. |  |
 
 #### Response parameters
 
