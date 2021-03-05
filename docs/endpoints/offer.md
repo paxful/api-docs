@@ -10,6 +10,7 @@ Create an Offer
 | -------------          | ----------------------- | ----------------- | :------: |
 | offer_type_field       | String                  | 'buy' or 'sell' string |   Yes    |
 | currency               | String                  | 3 letter ISO code for fiat currency. 'USD' or any other. Case insensitive |   Yes    |
+| crypto_currency        | String                  | When not set, by default will be 'btc'. Crypto currency code: ‘btc', ‘usdt’ or 'eth’. |   No    |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |   Yes    |
 | margin                 | Float                   | Number depends on user tier |   Yes    |
 | range_min              | Integer                 | Minimum 1         |   Yes    |

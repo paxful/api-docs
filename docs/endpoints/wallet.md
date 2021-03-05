@@ -12,9 +12,10 @@ None
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
-| balance       | Integer       | Currently available user balance in satoshis           |
+| balance       | Integer       | Currently available user balance in satoshi for btc wallet, micro cents for usdt wallet and wei for eth wallet.           |
 | incoming_amount    | Integer        |                           |
-| balance_escrow | Integer | Balance in escrow, in satoshis |
+| crypto_currency_code | String | By default if not defined returns btc wallet balance. Cryptocurrency code: ‘btc', ‘usdt’ or 'eth’. |
+| balance_escrow | Integer | Balance in escrow, in satoshi for btc wallet, micro cents for usdt wallet and wei for eth wallet. |
 
 ### wallet/new-address
 
@@ -43,3 +44,4 @@ None
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
 | addresses     | Array         | List of your bitcoin addresses, 50 limit       |
+| crypto_currency_code | String | By default if not defined returns btc  addresses. Cryptocurrency code: ‘btc', ‘usdt’ or 'eth’. |
