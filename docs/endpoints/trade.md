@@ -40,8 +40,8 @@ Start a trade
 | Field name    |   Possible value  | Description   | Required |
 | ------------- | ----------------- | ------------- | :------: |
 | offer_hash    | String            | Hash ID of an offer | Yes |
-| satoshi    | Integer            | Trade amount in satoshis | Read below |
-| crypto_amount | Integer | Trade amount in cyptocurrency. For btc trade in satoshi, for eth trade in gwei, for usdt trade in micro cents. 1 usdt = 1000000 micro cents. | Read below | 
+| satoshi    | Integer            | Trade amount in cryptocurrency | Read below |
+| crypto_amount | Integer | Trade amount in cryptocurrency. For btc trade in satoshi, for eth trade in gwei, for usdt trade in micro cents. 1 usdt = 1000000 micro cents. | Read below | 
 | fiat    | Float            | Trade amount in fiat currency | Read below |
 
 **Trade amount can be either passed in fiat or in crypto_amount. Crypto_amount is a new input parameter to replace satoshi, while satoshi is still supported.**
