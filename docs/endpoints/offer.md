@@ -10,6 +10,7 @@ Create an Offer
 | -------------          | ----------------------- | ----------------- | :------: |
 | offer_type_field       | String                  | 'buy' or 'sell' string |   Yes    |
 | currency               | String                  | 3 letter ISO code for fiat currency. 'USD' or any other. Case insensitive |   Yes    |
+| crypto_currency        | String                  | When not set, by default will be 'btc'. Cryptocurrency code: ‘btc', ‘usdt’ or 'eth’. |   No    |
 | payment_method         | String                  | Slug of payment method, for example Western Union needs to be passed as 'western-union' |   Yes    |
 | margin                 | Float                   | Number depends on user tier |   Yes    |
 | range_min              | Integer                 | Minimum 1         |   Yes    |
@@ -27,7 +28,7 @@ Create an Offer
 | country_limitation_list | String                 | Comma separated list of country codes |  |
 | tags                   | String                  | Comma separated list of tags, if a tag was not approved before, it's ignored |  |
 | is_fixed_price         | Boolean                 | Needed to update the offer with fixed price |  |
-| payment_country        | Boolean                 | 3 letter ISO country code (e.g. USA, EST, fra etc.). Required for country specific payment methods. |  |
+| payment_country        | String                  | 3 letter ISO country code (e.g. USA, EST, fra etc.). Required for country specific payment methods. |  |
 
 ##### Response parameters
 
