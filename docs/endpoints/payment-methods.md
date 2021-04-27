@@ -8,7 +8,9 @@ Fetch a list of available payment methods
 
 ##### Input parameters
 
-None
+| Field name    | Type          | Description                                                 | Required |
+| ------------- | :------------:| -----------------------------------------------------------:| -------- |
+| order         | String        | Sort by buy or sell, default is buy                         | No |
 
 ##### Response parameters
 
@@ -69,5 +71,104 @@ Fetch fees for payment methods
       }
     }
   }
+}
+```
+### payment-method/popular
+
+Fetch popular payment methods by country code
+
+**NB! This endpoint does not require Authentication**
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| country_code  | String            | Show popular payment methods by country, default US | No |
+
+##### Response parameters
+
+| Field name      | Type          | Description                                                 |
+| --------------- | :------------:| -----------------------------------------------------------:|
+| sell            | Array         | Payment methods slug list, grouped by overall, country and groups |
+| buy             | Array         | Payment methods slug list, grouped by overall, country and groups |
+
+##### Response example
+
+```
+{
+  "status": "success",
+  "timestamp": 1455032576,
+  "data": {
+    "sell": {
+      "overall": [
+        "itunes-gift-card"
+      ],
+      "country": [
+        "webmoney"
+      ],
+      "groups": {
+        "bank-transfers": [
+          "bank-transfer"
+        ]
+      }
+    },
+    "buy": {
+      "overall": [
+        "cash-deposit-to-bank"
+      ],
+      "country": [
+        "western-union"
+      ],
+      "groups": {
+        "bank-transfers": [
+          "bank-transfer"
+        ]
+      }
+    }
+  }
+}
+```
+### payment-method-group/list
+
+Fetch payment method groups list
+
+**NB! This endpoint does not require Authentication**
+
+##### Input parameters
+
+None
+
+##### Response parameters
+
+| Field name      | Type          | Description                                                 |
+| --------------- | :------------:| -----------------------------------------------------------:|
+| name            | String        | Payment method name         |
+| slug            | String        | Payment method alias        |
+| description     | Array         | Payment methods description for different crypto currencies |
+
+##### Response example
+
+```
+{
+  "status": "success",
+  "timestamp": 1619503055,
+  "data": [
+    {
+      "name": "Gift Cards",
+      "slug": "gift-cards",
+      "description": {
+        "sell": {
+          "btc": "Sell your Bitcoin for big discounts on popular gift cards from iTunes, Amazon and more.",
+          "usdt": "Sell your Tether for big discounts on popular gift cards from iTunes, Amazon and more.",
+          "eth": "Sell your Ethereum for big discounts on popular gift cards from iTunes, Amazon and more."
+        },
+        "buy": {
+          "btc": "Have a gift card you don't need? Trade it here for Bitcoin instantly.",
+          "usdt": "Have a gift card you don't need? Trade it here for Tether instantly.",
+          "eth": "Have a gift card you don't need? Trade it here for Ethereum instantly."
+        }
+      }
+    }
+  ]
 }
 ```
