@@ -10,6 +10,7 @@ Fetch a list of your transactions, optionally filtered by type
 | ------------- | ----------------- | ------------------------------------------------------------- | :------: |
 | page          | Integer           | Requested page, defaults to 1                                 | No |
 | type          | String            | Type of transaction, check below for a list of accepted types | No |
+| crypto_currency_code | String | Filter by crypto currency code or 'all' value for fully list, default is btc | No |
 
 Valid Types:
  * trade
