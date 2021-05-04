@@ -45,3 +45,50 @@ None
 | ------------- | :------------:| ------------------------------------------------------:|
 | addresses     | Array         | List of your bitcoin addresses, 50 limit       |
 | crypto_currency_code | String | By default if not defined returns btc  addresses. Cryptocurrency code: ‘btc', ‘usdt’ or 'eth’. |
+
+### wallet/conversion-quotes
+
+Get the current conversion quotes/prices of cryptocurrency pair(s).
+Note, array **response** is returned.
+
+##### Input parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| convert_from     | String         | Cryptocurrency to convert from e.g "BTC", "USDT", "ETH". |
+| convert_to | String | Cryptocurrency to convert to e.g "BTC", "USDT", "ETH". |
+
+##### Response parameters
+
+Response is Array of one or many objects. Each object has the following fields.
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| pair     | String         |Conversion pair e.g BTCUSDT.       |
+| quote_id | String | Converstion rate's quote id, to be used for the conversion as input parameter e.g `"50165aec-44dd-4e41-9c180e04432e2b01"`. |
+| conversion_rate | Object | An Object consisting of Conversion Rate e.g `{"amount": "58421.55", "currency_code": "BTC"}`. |
+| expired_time | String | Time when quote expires e.g "2020-01-02 15:00:05" Conversion using given quote_id can be made before this time. Time is in UTC. |
+| is_active | Boolean | Active status of this pair. Shows if conversion of the pair is possible. |
+
+### wallet/convert
+
+Convert balance from one cryptocurrency to another. `quote_id` is required and only BTC, USDT, and ETH is available.
+
+##### Input parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| convert_from     | String         | Cryptocurrency to convert from e.g "BTC", "USDT", "ETH". |
+| convert_to | String | Cryptocurrency to convert to e.g "BTC", "USDT", "ETH". |
+| amount | Integer | Amount to convert from, in cryptocurrency. For BTC in satoshi, for ETH in gwei, for USDT in microcents. 1 USDT = 1000000 micocents. |
+| quote_id | String | Request quote_id retrieved from `wallet/conversion-quotes` endpoint. If expired, new `quote_id` should be requested. |
+
+##### Response parameters
+
+| Field name    | Type          | Description                                            |
+| ------------- | :------------:| ------------------------------------------------------:|
+| order_id     | String         | Conversion order id.      |
+| converted_from_crypto_currency_code | String | Cryptocurrency code of converted from amount e.g "BTC". |
+| converted_from_amount | String | Amount converted in decimal string e.g "0.5". |
+| converted_to_crypto_currency_code | String | Cryptocurrency code of received amount e.g "USDT". |
+| converted_to_amount | String | Amount received after conversion in decimal string e.g "29219.55". |
