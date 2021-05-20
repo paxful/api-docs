@@ -67,7 +67,7 @@ Response is Array of one or many objects. Each object has the following fields.
 | pair     | String         |Conversion pair e.g BTCUSDT.       |
 | quote_id | String | Converstion rate's quote id, to be used for the conversion as input parameter e.g `"50165aec-44dd-4e41-9c180e04432e2b01"`. |
 | conversion_rate | Object | An Object consisting of Conversion Rate e.g `{"amount": "58421.55", "currency_code": "BTC"}`. |
-| expired_time | String | Time when quote expires e.g "2020-01-02 15:00:05" Conversion using given quote_id can be made before this time. Time is in UTC. |
+| expired_time | String | Time when quote expires e.g "2021-05-30 15:00:05" Conversion using given quote_id can be made before this time. Time is in UTC. |
 | is_active | Boolean | Active status of this pair. Shows if conversion of the pair is possible. |
 
 ### wallet/convert
@@ -80,7 +80,7 @@ Convert balance from one cryptocurrency to another. `quote_id` is required and o
 | ------------- | :------------:| ------------------------------------------------------:|
 | convert_from     | String         | Cryptocurrency to convert from e.g "BTC", "USDT", "ETH". |
 | convert_to | String | Cryptocurrency to convert to e.g "BTC", "USDT", "ETH". |
-| amount | Integer | Amount to convert from, in cryptocurrency. For BTC in satoshi, for ETH in gwei, for USDT in microcents. 1 USDT = 1000000 micocents. |
+| amount | String | Amount to convert from, in cryptocurrency. For BTC in satoshi, for ETH in wei, for USDT in microcents. 1 USDT = 1000000 micocents. |
 | quote_id | String | Request quote_id retrieved from `wallet/conversion-quotes` endpoint. If expired, new `quote_id` should be requested. |
 
 ##### Response parameters
@@ -89,6 +89,6 @@ Convert balance from one cryptocurrency to another. `quote_id` is required and o
 | ------------- | :------------:| ------------------------------------------------------:|
 | order_id     | String         | Conversion order id.      |
 | converted_from_crypto_currency_code | String | Cryptocurrency code of converted from amount e.g "BTC". |
-| converted_from_amount | String | Amount converted in decimal string e.g "0.5". |
+| converted_from_amount | String | Amount converted (in full unit e.g for BTC then "0.04", for USDT "10" etc). |
 | converted_to_crypto_currency_code | String | Cryptocurrency code of received amount e.g "USDT". |
-| converted_to_amount | String | Amount received after conversion in decimal string e.g "29219.55". |
+| converted_to_amount | String | Amount received after conversion (in full unit e.g for BTC then "0.04", for USDT "10" etc). |
