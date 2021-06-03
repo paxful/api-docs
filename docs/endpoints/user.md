@@ -31,6 +31,11 @@ Fetch information for a user
 | last_seen         | String | User last seen |
 | avatar_url        | String | Avatar url | 
 | status            | String | User status | 
+| blocked_count     | Int    | Count of people blocked by the user | 
+| completed_trades_with_me | Int | Count of completed trades with authorized user | 
+| trades_total      | Int    | Count of total completed trades | 
+| first_trade_date  | String | Date of the first completed trade | 
+| created_at        | String | Date of account has been created | 
  
 ### user/trust
 
