@@ -172,7 +172,13 @@ Reopen trade
 
 ### trade/release
 
-Release bitcoins for a trade
+Release bitcoins for a trade. If endpoint is invoked with an access key which has been received using Sign in with Paxful authorization flow and it happens that a user has 2FA enabled then you need to provide a code that you have received from a user. The flow may look like this: you invoke trade/release endpoint, if you receive 1006 response code, that means user has 2FA enabled, in this case in your application you prompt a user to provide you with a code. Once you have received it, you issue trade/release once again and provide the code in “x-paxful-2fa” header.
+
+##### Header parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| x-paxful-2fa  | String            | 2FA code      | No       |
 
 ##### Input parameters
 
