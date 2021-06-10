@@ -136,3 +136,30 @@ None
 | last_seen         | String | User last seen |
 | avatar_url        | String | Avatar url |
 | status            | String | User status | 
+
+### user/blocked-list
+
+Fetch a list of your blocked users
+
+##### Input parameters
+
+| Field name    |   Possible value  | Description   | Required |
+| ------------- | ----------------- | ------------- | :------: |
+| page          | Int  | Requested page, defaults to 1 | |
+
+
+##### Response parameters
+
+| Field name    | Type   | Description |
+| --------------| -------| ----------- |
+| count         | Int    | Count of the blocked users |
+| page          | Int    | Current page |
+| blocked_users | Array  | Array of the blocked users objects |
+
+Blocked user object:
+
+| Field name  | Type   | Description |
+| ----------- | -------| ----------- |
+| username    | String | Username |
+| avatar_url  | String | Avatar url |
+| blocked_at  | String | Blocking date |
