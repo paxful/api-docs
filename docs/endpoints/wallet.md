@@ -64,7 +64,7 @@ Response is Array of one or many objects. Each object has the following fields.
 
 | Field name    | Type          | Description                                            |
 | ------------- | :------------:| ------------------------------------------------------:|
-| pair     | String         |Conversion pair e.g BTCUSDT.       |
+| pair     | String         | Conversion pair e.g BTCUSDT.       |
 | quote_id | String | Converstion rate's quote id, to be used for the conversion as input parameter e.g `"50165aec-44dd-4e41-9c180e04432e2b01"`. |
 | conversion_rate | Object | An Object consisting of Conversion Rate e.g `{"amount": "58421.55", "currency_code": "BTC"}`. |
 | expired_time | String | Time when quote expires e.g "2021-05-30 15:00:05" Conversion using given quote_id can be made before this time. Time is in UTC. |
@@ -82,7 +82,7 @@ Convert balance from one cryptocurrency to another. `quote_id` is required and o
 | convert_to | String | Cryptocurrency to convert to e.g "BTC", "USDT", "ETH". |
 | amount | String | Amount to convert from, in cryptocurrency. For BTC in satoshi, for ETH in wei, for USDT in microcents. 1 USDT = 1000000 micocents. |
 | quote_id | String | Request quote_id retrieved from `wallet/conversion-quotes` endpoint. If expired, new `quote_id` should be requested. |
-| order_id | String | Order id. A valid UUID string. |
+| order_id | String | Order id. A valid UUID string that your application needs to generate. Having this parameter ensures idempotency of the operation - you can invoke the endpoint as many times with the same parameter, but conversion will be executed only once. This helps to avoid accidental double conversions. |
 
 ##### Response parameters
 
