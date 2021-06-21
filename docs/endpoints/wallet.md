@@ -82,6 +82,7 @@ Convert balance from one cryptocurrency to another. `quote_id` is required and o
 | convert_to | String | Cryptocurrency to convert to e.g "BTC", "USDT", "ETH". |
 | amount | String | Amount to convert from, in cryptocurrency. For BTC in satoshi, for ETH in wei, for USDT in microcents. 1 USDT = 1000000 micocents. |
 | quote_id | String | Request quote_id retrieved from `wallet/conversion-quotes` endpoint. If expired, new `quote_id` should be requested. |
+| order_id | String | Order id. A valid UUID string. |
 
 ##### Response parameters
 
