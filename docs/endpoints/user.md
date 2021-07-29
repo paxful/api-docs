@@ -95,9 +95,9 @@ Empty
 
 ### user/touch
 
-Refresh your last seen timestamp
+Deprecated. You don’t need to use this endpoint directly, last seen time is going to be updated automatically if you use other API endpoints.
 
-**This endpoint has its own rate limit and is limited to 360 requests per hour (every 10 second max)**
+Refresh your last seen time. This endpoint has its own rate limit and is limited to 360 requests per hour (every 10 second max).
 
 ##### Input parameters
 
