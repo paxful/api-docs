@@ -197,7 +197,8 @@ Results are cached for 1 minute.
 
 | Field name     | Type          | Description                      | Required | 
 | -------------- | ------------- | ------------------------------------- |:----:|
-| offer_type     | String        | Offer type (buy, sell) | * |
+| type           | String        | Offer type (buy, sell) | * |
+| offer_type     | String        | Deprecated. Use 'type' instead. <br> Note: There is a bug in this parameter, 'sell' and 'buy' are reversed. | |
 | payment_method | String        | Payment method slug | |
 | currency_code  | String        | Currency code | |
 | crypto_currency_code  | String | Crypto currency code, default is btc | |
