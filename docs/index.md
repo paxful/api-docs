@@ -1,3 +1,8 @@
+## New API documentation
+
+As of Oct 2021 readthedocs.io Paxful API documentation is deprecated, please instead use [new version of documentation](https://developers.paxful.com/paxful-products/paxful/documentation/ ) available at developers portal. The new documentation reflects many new endpoints that we have added recently, also it includes more detailed description of available filter parameters and response bodies. Hope you will enjoy it!
+
+Authentication section below is still relevant and its snippets of bootstrapping code still can be used, they are scheduled to be migrated to developers portal as well.
 ##Authentication
 
 For authentication, you need to generate your API key under your Paxful account settings in developer tab
